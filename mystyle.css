@@ -1,36 +1,102 @@
-/*
-Realizado por Miguel Pérez
-Las clases indicadas Materialize y la mayoría solo corrige sus valores por defecto. 
-https://materializecss.com/
-*/
-.wrapper {
-    /* Navbar padding */
-    padding: 0.5rem 2rem;
+/* Realizado por Miguel Pérez */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Raleway:ital,wght@0,400;0,700;1,300&display=swap');
+/* Tomé fuentes de Google que sean tipo typeface Serif (para darle mas formalidad), Bree Serif y Raleway me gustaron para este proyecto. */
+
+/********** Generales *********/
+
+h1 h2 h3 {
+    margin: 0;
+    font-family: 'Bree Serif', serif;
+    color: #101010;
+    /* Bree Serif para titulos a no ser indicado lo contrario*/
 }
+
+html {
+    font-family: 'Raleway', sans-serif;
+    /* Raleway para el resto del contenido a no ser indicado lo contrario*/
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: #1f1f1f;
+    text-decoration: none;
+}
+
+p ul{
+    margin: 0;
+}
+
+/********** Classes *********/
+
+.main-nav {
+    display: block;
+    padding: 1rem;
+    background-color: teal;
+    /*Agrego una leve sombra al nav para dar el efecto de elevación.*/
+    -moz-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5); /* Compatibilidad para mozilla */
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.5);       
+}
+
+.nav-element {
+    display: inline-block;
+    margin: auto;
+    color: white;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.col{
+    /* col es el reducido de column. */
+    margin: 1rem;
+    text-align: left;
+}
+
+.image-fit{
+    width: 100%;
+}
+
+.content{
+    line-height: 1.9rem;
+}
+
+.footer-content {
+    padding: 0.8rem;
+    background-color: teal;
+    color: white;
+}
+
+/********** Selectors *********/
+
+
 #main-container {
     padding: 1rem;
 }
-.row{
-    /* Se corrige para que los row en materialize usen flex debido a que por defecto
-    vienen como display block.*/
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    justify-content: center;
+
+#foto-perfil{
+    width: 30%;
 }
-.col{
-    /* Esto corrige el margin horrible que tienen los col por defecto en materialize*/
-    margin: auto;
+
+#cv-content{
+    width: 65%
 }
-.article-image {
-    /* Esto solo justifica el centrado de la imagen en un componente card. Realizado por mi.*/
-    position: relative;
-    margin: auto;
-    max-width: 300px;
-    max-height: 300px;
-    contain: content;
-    justify-self: center;
-}
-#footer-bottom{
-    padding-left: 1rem;
+
+@media screen and (max-width: 600px) {
+    #foto-perfil{
+        width: 100%;
+    }
+    #cv-content{
+        width: 100%;
+    }
+    .row{
+        flex-direction: column;
+    }
 }
